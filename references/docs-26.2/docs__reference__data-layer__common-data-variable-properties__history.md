@@ -1,0 +1,53 @@
+
+# History
+
+## About
+Activate the history in order to store a certain amount of past values for a
+variable.
+This is the requirement for using Elements such as a
+Trend.
+
+## Properties
+
+#### Every
+The frequency at which HELIO should record a value
+
+#### For
+The length of time in minutes for which HELIO will record the history of this variable.
+See Disk Space Usage and Limitations below to get a feeling how much this
+affects the disk space of your target device.
+
+## When Are These Settings Applied?
+Changing those settings does not immediately start recording history. It is also
+important to know which one of the Data Connection Modes of the
+HMI Preview Panel you are currently using.
+|  | When will changes take effect? | Which data will get used? |
+| **Placeholder Mode** | Immediately | Simulated values which are based on the minimum and maximum values. |
+| **PLC Mode** | When project is saved | Actual historical data stored by HELIO. Depending on your chosen settings, it may take some time before any data is visible. |
+
+## Disk Space Usage
+Storing historical data will take up extra space on your device. Make sure to
+plan for this and reserve space on the hard drive of your target device. It is
+not always sensible to use a high resolution with more than 1000 samples if you
+do not need to display a correspondingly smaller section graphically.
+| Every | For | Required Disk Space | Samples |
+| `1 s` | `15 min` | `0.26 MiB` | `900` |
+| `1 s` | `1 h` | `1.0 MiB` | `3600` |
+| `2 s` | ` 240 min` (4 h) | `2.1 MiB` | `7200` |
+| `10 s` | `1.440 min` (24h) | `2.5 MiB` | `8640` |
+| `60 s` | `10.080 min` (1 week) | `2.9 MiB` | `10.080` |
+
+## Limitations
+History in HELIO is meant to be a simple tool that covers simple use cases
+without relying on additional software. That’s why:
+- HELIO is not a replacement for tools that query, visualize, and explore
+collected metrics like Grafana.
+- HELIO is not meant to be a storage layer for historical data & metrics.
+
+## Related
+
+#### Variable Types
+Numeric Data Variables
+
+#### Data Properties
+Minimum and Maximum Values

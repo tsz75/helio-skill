@@ -1,0 +1,702 @@
+{
+  "version": 13,
+  "config": {
+    "type": "template",
+    "description": "Want to learn HELIO step by step with the Quickstart guide? Start with this simple skeleton!",
+    "languages": [
+      {
+        "locale": "en-GB",
+        "name": "English"
+      },
+      {
+        "locale": "de-DE",
+        "name": "Deutsch"
+      }
+    ],
+    "defaultLocale": "en-GB",
+    "screenSizes": [
+      {
+        "name": "Desktop",
+        "displayNameInEditor": false,
+        "icon": {
+          "$heEntityId": "com.helio-hmi.builtin.Icon",
+          "version": 1,
+          "props": {
+            "icon": "com.helio-hmi.builtin.DesktopDisplay"
+          }
+        },
+        "description": "Desktop",
+        "prefab": {
+          "name": "Full HD",
+          "width": 1920,
+          "height": 1080
+        },
+        "width": 1920,
+        "height": 1080,
+        "id": "defaultDesktopSize"
+      },
+      {
+        "name": "iPad Landscape",
+        "displayNameInEditor": false,
+        "icon": {
+          "$heEntityId": "com.helio-hmi.builtin.Icon",
+          "version": 1,
+          "props": {
+            "icon": "com.helio-hmi.builtin.Tablet"
+          }
+        },
+        "description": "iPad Landscape",
+        "width": 1180,
+        "height": 820,
+        "id": "defaultTabletLandscapeSize"
+      },
+      {
+        "name": "iPhone Portrait",
+        "displayNameInEditor": false,
+        "icon": {
+          "$heEntityId": "com.helio-hmi.builtin.Icon",
+          "version": 1,
+          "props": {
+            "icon": "com.helio-hmi.builtin.Smartphone"
+          }
+        },
+        "description": "iPhone Portrait",
+        "width": 375,
+        "height": 667,
+        "id": "defaultPhonePortraitSize"
+      }
+    ],
+    "themeId": "com.helio-hmi.builtin.LunarLightTheme",
+    "initialUsers": [
+      {
+        "userId": "alice",
+        "displayName": "Alice",
+        "initialPassword": "$2a$10$grKLGWlNff6DrAQoLu2bJ.TbNZpaG5R5XzBQEhOiZfN28lVs3JLPa",
+        "roleIds": [
+          "operator"
+        ]
+      },
+      {
+        "userId": "bob",
+        "displayName": "Bob",
+        "initialPassword": "$2a$10$MN4G0OXOp5B9nPocFPYoQepUGldU9JvTURbP.8Leaa4ODm2S7/RCu",
+        "roleIds": [
+          "admin",
+          "operator"
+        ]
+      }
+    ],
+    "roles": [
+      {
+        "roleId": "operator",
+        "displayName": "Operator",
+        "description": "Default operating level"
+      },
+      {
+        "roleId": "admin",
+        "displayName": "Administrator",
+        "description": "Highest access level",
+        "permissions": [
+          "com.helio-hmi.builtin.hmi.ManageUsers"
+        ]
+      }
+    ],
+    "icon": "com.helio-hmi.builtin.Quick",
+    "color": "com.helio-hmi.builtin.DistinguishingTurquoise",
+    "lastModifiedBy": "Eve"
+  },
+  "data": [
+    {
+      "id": "$heRoot",
+      "type": "Directory",
+      "name": "<root>",
+      "children": [
+        {
+          "$heDataId": "HeTMJML9TLyseZZkHE3ffQ"
+        }
+      ]
+    },
+    {
+      "id": "HeTMJML9TLyseZZkHE3ffQ",
+      "type": "Directory",
+      "name": "Quickstart",
+      "children": [
+        {
+          "$heDataId": "ZDLE4fnaR6yWAQ_nQDCSaw"
+        },
+        {
+          "$heDataId": "8f7ObUSIQDGOEK5azS7wnA"
+        }
+      ]
+    },
+    {
+      "id": "ZDLE4fnaR6yWAQ_nQDCSaw",
+      "type": "Directory",
+      "name": "Moulding",
+      "children": [
+        {
+          "$heDataId": "tmhfWj3wQlOtihzfKBx_DQ"
+        },
+        {
+          "$heDataId": "-Rkw9hd0SO-htS7BjehFeQ"
+        },
+        {
+          "$heDataId": "nomnHSfPSDW1vanReQ8Ehw"
+        },
+        {
+          "$heDataId": "I2K9iJfuS6mCiDDUa4R5KQ"
+        }
+      ]
+    },
+    {
+      "id": "tmhfWj3wQlOtihzfKBx_DQ",
+      "type": "Directory",
+      "name": "Vacuum",
+      "children": [
+        {
+          "$heDataId": "qxKDMo2aRfqlbh_MS9Rgbw"
+        },
+        {
+          "$heDataId": "3w_9tia0SiScSoE8Px2MoQ"
+        },
+        {
+          "$heDataId": "attecieyQsC97ki9YGCAwg"
+        }
+      ]
+    },
+    {
+      "id": "qxKDMo2aRfqlbh_MS9Rgbw",
+      "type": "Variable",
+      "name": "Time",
+      "config": {
+        "type": "Integer",
+        "unit": "ms",
+        "allowRead": "All",
+        "allowWrite": "All",
+        "placeholder": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "3w_9tia0SiScSoE8Px2MoQ",
+      "type": "Variable",
+      "name": "PreDelay",
+      "config": {
+        "type": "Float",
+        "allowRead": "All",
+        "allowWrite": "All",
+        "placeholder": {
+          "value": 12.346
+        }
+      }
+    },
+    {
+      "id": "attecieyQsC97ki9YGCAwg",
+      "type": "Variable",
+      "name": "PreDelayActive",
+      "config": {
+        "type": "Boolean",
+        "allowRead": "All",
+        "allowWrite": "All",
+        "placeholder": {
+          "value": true
+        }
+      }
+    },
+    {
+      "id": "-Rkw9hd0SO-htS7BjehFeQ",
+      "type": "Directory",
+      "name": "Steam",
+      "children": [
+        {
+          "$heDataId": "bmszZbdbRj-cctqXMwjfVw"
+        },
+        {
+          "$heDataId": "bM492HVcTumgyRc3qywGCA"
+        }
+      ]
+    },
+    {
+      "id": "bmszZbdbRj-cctqXMwjfVw",
+      "type": "Variable",
+      "name": "Pressure",
+      "config": {
+        "type": "Float",
+        "unit": "bar",
+        "allowRead": "All",
+        "allowWrite": "All",
+        "placeholder": {
+          "value": 22.81
+        }
+      }
+    },
+    {
+      "id": "bM492HVcTumgyRc3qywGCA",
+      "type": "Variable",
+      "name": "Temperature",
+      "config": {
+        "type": "Integer",
+        "unit": "°",
+        "allowRead": "All",
+        "allowWrite": "All",
+        "placeholder": {
+          "value": 200
+        }
+      }
+    },
+    {
+      "id": "nomnHSfPSDW1vanReQ8Ehw",
+      "type": "Directory",
+      "name": "Production",
+      "children": [
+        {
+          "$heDataId": "nPtUA-FVR2Gm_ae7ws_mwA"
+        },
+        {
+          "$heDataId": "h5JmXGtZRJSxhWJ5sXTQGw"
+        }
+      ]
+    },
+    {
+      "id": "nPtUA-FVR2Gm_ae7ws_mwA",
+      "type": "Variable",
+      "name": "Good",
+      "config": {
+        "type": "Integer",
+        "unit": "pcs",
+        "allowRead": "All",
+        "allowWrite": "None",
+        "placeholder": {
+          "value": 1268
+        }
+      }
+    },
+    {
+      "id": "h5JmXGtZRJSxhWJ5sXTQGw",
+      "type": "Variable",
+      "name": "Bad",
+      "config": {
+        "type": "Integer",
+        "unit": "pcs",
+        "allowRead": "All",
+        "allowWrite": "None",
+        "placeholder": {
+          "value": 2
+        }
+      }
+    },
+    {
+      "id": "I2K9iJfuS6mCiDDUa4R5KQ",
+      "type": "Variable",
+      "name": "OEE",
+      "config": {
+        "type": "Float",
+        "unit": "%",
+        "ranges": [
+          {
+            "status": "Critical",
+            "lowerBound": 0,
+            "upperBound": 60
+          },
+          {
+            "status": "Warning",
+            "lowerBound": 60,
+            "upperBound": 70
+          },
+          {
+            "status": "Good"
+          }
+        ],
+        "minValue": 0,
+        "maxValue": 100,
+        "allowRead": "All",
+        "allowWrite": "None",
+        "placeholder": {
+          "value": 92.7
+        }
+      }
+    },
+    {
+      "id": "8f7ObUSIQDGOEK5azS7wnA",
+      "type": "List",
+      "name": "Tools",
+      "blueprint": {
+        "$heDataId": "9LrVpwYiQf2M4IpuNfAfUw"
+      },
+      "config": {
+        "allowWrite": "All"
+      },
+      "link": {
+        "type": "DataTree",
+        "path": "/Services/Tools"
+      }
+    },
+    {
+      "id": "9LrVpwYiQf2M4IpuNfAfUw",
+      "type": "Directory",
+      "name": "Tools",
+      "children": [
+        {
+          "$heDataId": "j7VUgPfJTLuTOEmAE5eYoA"
+        },
+        {
+          "$heDataId": "ONQUypmHRJSVmbxo2mINTQ"
+        },
+        {
+          "$heDataId": "wazscF3IQxaJmEBn9e-7LQ"
+        },
+        {
+          "$heDataId": "iSi_swiHTsuBuW09uG1uig"
+        }
+      ]
+    },
+    {
+      "id": "j7VUgPfJTLuTOEmAE5eYoA",
+      "type": "Variable",
+      "name": "Id",
+      "config": {
+        "type": "String",
+        "allowRead": "All",
+        "allowWrite": "All"
+      },
+      "link": {
+        "type": "DataTree",
+        "path": "Id"
+      }
+    },
+    {
+      "id": "ONQUypmHRJSVmbxo2mINTQ",
+      "type": "Variable",
+      "name": "Name",
+      "config": {
+        "type": "String",
+        "allowRead": "All",
+        "allowWrite": "All"
+      },
+      "link": {
+        "type": "DataTree",
+        "path": "Name"
+      }
+    },
+    {
+      "id": "wazscF3IQxaJmEBn9e-7LQ",
+      "type": "Variable",
+      "name": "Material",
+      "config": {
+        "type": "String",
+        "allowRead": "All",
+        "allowWrite": "All"
+      },
+      "link": {
+        "type": "DataTree",
+        "path": "Material"
+      }
+    },
+    {
+      "id": "iSi_swiHTsuBuW09uG1uig",
+      "type": "Variable",
+      "name": "RemainingCycles",
+      "config": {
+        "type": "Float",
+        "allowRead": "All",
+        "allowWrite": "All"
+      },
+      "link": {
+        "type": "DataTree",
+        "path": "RemainingCycles"
+      }
+    }
+  ],
+  "rootInstanceId": "hmi",
+  "instances": [
+    {
+      "id": "hmi",
+      "name": "HMI",
+      "classId": "com.helio-hmi.builtin.Hmi",
+      "version": 9,
+      "props": {
+        "header": [
+          {
+            "$heInstanceId": "W7XoHMg8S5qgUrD3rRgyqQ"
+          },
+          {
+            "$heInstanceId": "3th1oSuQTFOu3W_dwKYClA"
+          },
+          {
+            "$heInstanceId": "fi6Uvs8gRteRM2N-h03x5w"
+          },
+          {
+            "$heInstanceId": "gw0rQj6ZS4Cn9zFJR62nKA"
+          }
+        ],
+        "sidebar": [],
+        "statusBar": [],
+        "content": [
+          {
+            "$heInstanceId": "fy8Ce4LrTLeR7KGtNwU_rA"
+          }
+        ],
+        "dialogs": [],
+        "footer": [
+          {
+            "$heInstanceId": "hXtAxLX6TUe-VTmHsU9ycg"
+          },
+          {
+            "$heInstanceId": "eUlfTVwcTJWEloxdC3VRFw"
+          }
+        ],
+        "messages": [],
+        "messagesDataSource": {
+          "type": "Native"
+        },
+        "messageListPage": {
+          "$heWeakInstanceId": "sQwSNdJQRSemuIsih4lEgQ"
+        },
+        "infoMessageDisplayMode": "ListAndDialog",
+        "warningMessageDisplayMode": "ListAndDialog",
+        "errorMessageDisplayMode": "ListAndDialog"
+      }
+    },
+    {
+      "id": "3th1oSuQTFOu3W_dwKYClA",
+      "name": "User Info",
+      "classId": "com.helio-hmi.builtin.HeaderCell",
+      "version": 5,
+      "props": {
+        "title": {
+          "$heEntityId": "com.helio-hmi.builtin.UserInfo",
+          "version": 1,
+          "props": {}
+        },
+        "subtitle": {
+          "$heEntityId": "com.helio-hmi.builtin.UserInfo",
+          "version": 1,
+          "props": {
+            "infoType": "roles"
+          }
+        },
+        "icon": {
+          "$heEntityId": "com.helio-hmi.builtin.Icon",
+          "version": 1,
+          "props": {
+            "icon": "com.helio-hmi.builtin.User"
+          }
+        },
+        "width": 200,
+        "display": "icon-and-text",
+        "essential": true,
+        "canShrink": true,
+        "onClick": {
+          "$heActionId": "com.helio-hmi.builtin.OpenDialog",
+          "version": 2,
+          "props": {
+            "dialog": {
+              "type": "BuiltIn",
+              "id": "com.helio-hmi.builtin.AuthenticationDialog"
+            }
+          }
+        },
+        "displayStatus": "fromStatus",
+        "manualStatus": {
+          "$heEntityId": "com.helio-hmi.builtin.SignalingStatus",
+          "version": 2,
+          "props": {}
+        }
+      }
+    },
+    {
+      "id": "fi6Uvs8gRteRM2N-h03x5w",
+      "name": "Language Switch",
+      "classId": "com.helio-hmi.builtin.HeaderCell",
+      "version": 5,
+      "props": {
+        "title": {
+          "$heEntityId": "com.helio-hmi.builtin.LanguageInfo",
+          "version": 1,
+          "props": {
+            "displayLength": "Short"
+          }
+        },
+        "icon": {
+          "$heEntityId": "com.helio-hmi.builtin.Icon",
+          "version": 1,
+          "props": {
+            "icon": "com.helio-hmi.builtin.Language"
+          }
+        },
+        "width": 140,
+        "display": "icon-and-text",
+        "essential": true,
+        "canShrink": true,
+        "onClick": {
+          "$heActionId": "com.helio-hmi.builtin.OpenDialog",
+          "version": 2,
+          "props": {
+            "dialog": {
+              "type": "BuiltIn",
+              "id": "com.helio-hmi.builtin.ChooseLanguageDialog"
+            }
+          }
+        },
+        "displayStatus": "fromStatus",
+        "manualStatus": {
+          "$heEntityId": "com.helio-hmi.builtin.SignalingStatus",
+          "version": 2,
+          "props": {}
+        }
+      }
+    },
+    {
+      "id": "W7XoHMg8S5qgUrD3rRgyqQ",
+      "classId": "com.helio-hmi.builtin.Spacer",
+      "version": 2,
+      "props": {
+        "widthType": "flexible"
+      }
+    },
+    {
+      "id": "A5hfeiXKRbaZSkNfGjfPIg",
+      "classId": "com.helio-hmi.builtin.Image",
+      "version": 2,
+      "props": {
+        "mode": "image",
+        "image": {
+          "$heEntityId": "com.helio-hmi.builtin.Image",
+          "version": 3,
+          "props": {
+            "image": {
+              "$heAssetType": "Url",
+              "url": "/assets/5a86851c653e26780d3aa3983fbd8fc3.webp",
+              "originalFilename": "helio-24-2-visual.webp"
+            },
+            "markerItems": [],
+            "layers": [],
+            "fileMetaData": {
+              "fileType": "webp"
+            }
+          }
+        },
+        "objectFit": "scale-down"
+      }
+    },
+    {
+      "id": "fy8Ce4LrTLeR7KGtNwU_rA",
+      "classId": "com.helio-hmi.builtin.ParameterPage",
+      "version": 6,
+      "props": {
+        "title": {
+          "$heEntityId": "com.helio-hmi.builtin.MsgFormat",
+          "version": 1,
+          "props": {
+            "message": "Get Started"
+          }
+        },
+        "icon": {
+          "$heEntityId": "com.helio-hmi.builtin.Icon",
+          "version": 1,
+          "props": {
+            "icon": "com.helio-hmi.builtin.Quick"
+          }
+        },
+        "includeInNavigation": true,
+        "writeMode": "direct",
+        "parameters": [
+          {
+            "$heInstanceId": "QaeAR4EMQ0mSRnngm5VrKw"
+          }
+        ],
+        "visualization": [
+          {
+            "$heInstanceId": "A5hfeiXKRbaZSkNfGjfPIg"
+          }
+        ],
+        "footer": [],
+        "visualizationLayout": "1-1"
+      }
+    },
+    {
+      "id": "gw0rQj6ZS4Cn9zFJR62nKA",
+      "classId": "com.helio-hmi.builtin.LogoCell",
+      "version": 2,
+      "props": {
+        "width": 56,
+        "essential": false,
+        "backgroundColor": "",
+        "paddingBlock": 8,
+        "paddingInline": 8
+      }
+    },
+    {
+      "id": "QaeAR4EMQ0mSRnngm5VrKw",
+      "classId": "com.helio-hmi.builtin.Markdown",
+      "version": 1,
+      "props": {
+        "value": {
+          "$heEntityId": "com.helio-hmi.builtin.MsgFormat",
+          "version": 1,
+          "props": {
+            "message": "HELIO.Template.Quickstart.Intro",
+            "multiline": true
+          }
+        }
+      }
+    },
+    {
+      "id": "7n-XTZofTeak0748OGQZLw",
+      "classId": "com.helio-hmi.builtin.MachineControlButton",
+      "version": 6,
+      "props": {
+        "icon": {
+          "$heEntityId": "com.helio-hmi.builtin.Icon",
+          "version": 1,
+          "props": {
+            "icon": "com.helio-hmi.builtin.Menu"
+          }
+        },
+        "label": {
+          "$heEntityId": "com.helio-hmi.builtin.MsgFormat",
+          "version": 1,
+          "props": {
+            "message": "Menu"
+          }
+        },
+        "displayElements": "iconInFrontCaption",
+        "displayStatus": "none",
+        "onClick": {
+          "$heActionId": "com.helio-hmi.builtin.ShowMainNavigation",
+          "version": 1,
+          "props": {}
+        }
+      }
+    },
+    {
+      "id": "hXtAxLX6TUe-VTmHsU9ycg",
+      "classId": "com.helio-hmi.builtin.NavigationControls",
+      "version": 1,
+      "props": {
+        "children": [
+          {
+            "$heInstanceId": "7n-XTZofTeak0748OGQZLw"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eUlfTVwcTJWEloxdC3VRFw",
+      "classId": "com.helio-hmi.builtin.Spacer",
+      "version": 2,
+      "props": {
+        "widthType": "flexible"
+      }
+    }
+  ],
+  "themes": [],
+  "themeVars": {},
+  "messages": {
+    "configs": [],
+    "triggers": []
+  },
+  "databases": {},
+  "recipeGroups": []
+}
